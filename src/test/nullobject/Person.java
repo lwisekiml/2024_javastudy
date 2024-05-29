@@ -10,7 +10,7 @@ public class Person {
     }
 
     public Person(Label name) {
-        this(name, Label.newNull());
+        this(name, Label.NULL);
     }
 
     public void display() {

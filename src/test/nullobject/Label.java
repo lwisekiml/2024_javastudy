@@ -1,6 +1,7 @@
 package test.nullobject;
 
 public class Label {
+    public final static Label NULL = new NullLabel();
     private final String label;
 
     public Label(String label) {
@@ -20,18 +21,18 @@ public class Label {
     }
 
     // 팩토리 메소드
-    public static Label newNull() {
-        return NullLabel.getInstance();
-    }
+//    public static Label newNull() {
+//        return NullLabel.getInstance();
+//    }
 
     // 널 객체
     private static class NullLabel extends Label {
         // 싱글톤
-        private static final NullLabel singleton = new NullLabel();
-
-        private static NullLabel getInstance() {
-            return singleton;
-        }
+//        private static final NullLabel singleton = new NullLabel();
+//
+//        private static NullLabel getInstance() {
+//            return singleton;
+//        }
 
         public NullLabel() {
             super("(none)");
