@@ -7,10 +7,6 @@ public class Label {
         this.label = label;
     }
 
-    public static Label newNull() {
-        return new NullLabel();
-    }
-
     public boolean isNull() {
         return false;
     }
@@ -21,5 +17,32 @@ public class Label {
 
     public String toString() {
         return "\"" + label + "\"";
+    }
+
+    // 팩토리 메소드
+    public static Label newNull() {
+        return NullLabel.getInstance();
+    }
+
+    // 널 객체
+    private static class NullLabel extends Label {
+        // 싱글톤
+        private static final NullLabel singleton = new NullLabel();
+
+        private static NullLabel getInstance() {
+            return singleton;
+        }
+
+        public NullLabel() {
+            super("(none)");
+        }
+
+        @Override
+        public void display() { }
+
+        @Override
+        public boolean isNull() {
+            return true;
+        }
     }
 }
