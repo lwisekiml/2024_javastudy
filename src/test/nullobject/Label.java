@@ -7,6 +7,10 @@ public class Label {
         this.label = label;
     }
 
+    public static Label newNull() {
+        return new NullLabel();
+    }
+
     public boolean isNull() {
         return false;
     }
